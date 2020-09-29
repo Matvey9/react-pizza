@@ -9,7 +9,7 @@ function Header() {
     const {totalPrice, totalCount} = useSelector(({cart}) =>({
         totalPrice: cart.totalPrice,
         totalCount: cart.totalCount
-    }))
+    }));
     return (
 
         <div className="header">

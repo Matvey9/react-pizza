@@ -1,5 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Button from './Button';
+
 
 const CartItem = ({ id, name, type, size, totalPrice, totalCount, onRemove, onMinus, onPlus }) => {
     const handleRemoveClick = () => {
@@ -94,6 +97,18 @@ const CartItem = ({ id, name, type, size, totalPrice, totalCount, onRemove, onMi
             </div>
         </div>
     );
+};
+
+CartItem.propTypes = {
+    id: PropTypes.number,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    size: PropTypes.number,
+    totalPrice: PropTypes.number,
+    totalCount: PropTypes.number,
+    onRemove: PropTypes.func.isRequired,
+    onMinus: PropTypes.func.isRequired,
+    onPlus: PropTypes.func.isRequired
 };
 
 export default CartItem;

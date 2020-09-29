@@ -9,7 +9,7 @@ import {Link} from "react-router-dom";
 function Cart() {
 
     const dispatch = useDispatch();
-    const {totalPrice, totalCount, items} = useSelector(({cart}) => cart)
+    const {totalPrice, totalCount, items} = useSelector(({cart}) => cart);
     const addedPizzas = Object.keys(items).map(key => {
         return items[key].items[0]
     });
