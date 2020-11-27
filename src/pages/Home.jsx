@@ -31,39 +31,39 @@ function Home() {
         dispatch(setSortBy(type));
     }, []);
 
-    const handleAddPizzaToCart= obj =>{
+    const handleAddPizzaToCart = obj => {
         dispatch(addPizzaToCart(obj))
     };
 
     return (
-        <div className="container">
-            <div className="content__top">
-                <Categories
-                    activeCategory={category}
-                    onClickCategory={onSelectCategory}
-                    items={categoryNames}
-                />
-                <SortPopup
-                    activeSortType={sortBy.type}
-                    items={sortItems}
-                    onClickSortType={onSelectSortType}
-                />
-            </div>
-            <h2 className="content__title">Все пиццы</h2>
-            <div className="content__items">
-                {isLoaded
-                    ? items.map((obj) =>
-                        <PizzaBlock
-                            onClickAddPizza={handleAddPizzaToCart}
-                            key={obj.id}
-                            {...obj}
-                        />)
-                    : Array(10)
-                        .fill(0)
-                        .map((_, index) => <PizzaLoadingBlock key={index}/>)}
+      <div className="container">
+          <div className="content__top">
+              <Categories
+                activeCategory={category}
+                onClickCategory={onSelectCategory}
+                items={categoryNames}
+              />
+              <SortPopup
+                activeSortType={sortBy.type}
+                items={sortItems}
+                onClickSortType={onSelectSortType}
+              />
+          </div>
+          <h2 className="content__title">Все пиццы</h2>
+          <div className="content__items">
+              {isLoaded
+                ? items.map((obj) =>
+                  <PizzaBlock
+                    onClickAddPizza={handleAddPizzaToCart}
+                    key={obj.id}
+                    {...obj}
+                  />)
+                : Array(10)
+                  .fill(0)
+                  .map((_, index) => <PizzaLoadingBlock key={index}/>)}
 
-            </div>
-        </div>
+          </div>
+      </div>
     )
 }
 
