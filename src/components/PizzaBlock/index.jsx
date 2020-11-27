@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import Button from "../Button";
 
-function PizzaBlock({id, name, imageUrl, price, types, sizes, onClickAddPizza, addedCount}) {
+function PizzaBlock({id, name, imageUrl, price, types, sizes, onClickAddPizza}) {
     const [activeType, setActiveType] = useState(types[0]);
     const [activeSize, setActiveSize] = useState(0);
 
@@ -19,7 +19,7 @@ function PizzaBlock({id, name, imageUrl, price, types, sizes, onClickAddPizza, a
 
     const onAddPizza = () => {
         const obj = {
-            id,
+            id :parseInt(String(activeType) + String(activeSize) + id),
             name,
             imageUrl,
             price,
@@ -80,7 +80,6 @@ function PizzaBlock({id, name, imageUrl, price, types, sizes, onClickAddPizza, a
                             />
                         </svg>
                         <span>Добавить</span>
-                        {addedCount && <i>{addedCount}</i>}
                     </Button>
                 </div>
             </div>
