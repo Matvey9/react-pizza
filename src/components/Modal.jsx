@@ -19,8 +19,10 @@ const Modal = ({active, setActive}) => {
 			{active && (<div className={'cart__modal'} onClick={setActiveModalWindow}>
 				<div className={'modal__content'} onClick={e => e.stopPropagation()}>
 					<p>Вы действительно хотите очистить корзину?</p>
-					<button onClick={onClearCart}>Да</button>
-					<button onClick={setActiveModalWindow}>Нет</button>
+					<div className={'modal__button-wrapper'}>
+						<button className={'button'} onClick={onClearCart}>Да</button>
+						<button className={'button'} onClick={setActiveModalWindow}>Нет</button>
+					</div>
 				</div>
 			</div>)}
 		</>
