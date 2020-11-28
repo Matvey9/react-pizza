@@ -8,11 +8,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: scale(0);
-}
-
-.cart__modal.active {
-  transform: scale(1);
 }
 
 .modal__content {

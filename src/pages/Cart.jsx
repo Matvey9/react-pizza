@@ -8,7 +8,6 @@ import {Link} from "react-router-dom";
 import Modal from "../components/Modal";
 
 function Cart() {
-	//todo Перенести в redux
 	const [modalActive, setModalActive] = useState(false);
 	const dispatch = useDispatch();
 	const {totalPrice, totalCount, items} = useSelector(({cart}) => cart);
@@ -16,8 +15,8 @@ function Cart() {
 		return items[key].items[0]
 	});
 
-	const onClearCart = () => {
-		setModalActive(true);
+	const toggleVisibleModal = () => {
+		setModalActive(!modalActive);
 	};
 
 	const onRemoveItem = (id) => {
@@ -107,7 +106,7 @@ function Cart() {
 										/>
 									</svg>
 
-									<span onClick={onClearCart}>Очистить корзину</span>
+									<span onClick={toggleVisibleModal}>Очистить корзину</span>
 								</div>
 							</div>
 							<div className="content__items">
